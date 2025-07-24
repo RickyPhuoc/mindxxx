@@ -1,0 +1,32 @@
+{
+  "version": "2.0",
+  "created": "2025-07-23T13:42:34.700722",
+  "mandatory_checks": [
+    "reality_check",
+    "data_validation",
+    "profit_cap_validation",
+    "exit_price_reachability"
+  ],
+  "optimization_engine": {
+    "primary": "reality_check_optimizer.py",
+    "fallback": "backtest_gridsearch_slbe_ts_Version3.py",
+    "legacy": "DEPRECATED - DO NOT USE"
+  },
+  "validation_thresholds": {
+    "max_realistic_profit_short": 8.0,
+    "max_realistic_profit_long": 10.0,
+    "reality_score_minimum": 0.8,
+    "fantasy_tolerance": 0.1
+  },
+  "mandatory_files": [
+    "data chart full info.csv",
+    "reality_check_optimizer.py",
+    "web_reality_check.py"
+  ],
+  "output_requirements": [
+    "reality_score",
+    "fantasy_detection",
+    "data_validation_log",
+    "profit_validation"
+  ]
+}
